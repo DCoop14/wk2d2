@@ -1,0 +1,96 @@
+### 1) Build a Shopping Cart <br>
+<p><b>You can use either lists or dictionaries. The program should have the following capabilities:</b><br><br>
+1) Takes in input <br>
+2) Stores user input into a dictionary or list <br>
+3) The User can add or delete items <br>
+4) The User can see current shopping list <br>
+5) The program Loops until user 'quits' <br>
+6) Upon quiting the program, print out all items in the user's list <br>
+</p>
+from IPython.display import clear_output
+
+# Ask the user four bits of input: Do you want to : Show/Add/Delete or Quit?
+
+shopping_cart = {"plums" : 2,
+                "kale" : 1,
+                "oranges" : 4,
+                "bananas" : 6
+ }
+for item in shopping_cart:
+    print(item,":",shopping_cart[item])
+
+def askUser():
+    item = input("Enter an item:")
+    amt = int(input("Enter the amount"))
+    return item, amt
+    
+def add_item():
+    pass
+def remove_item():
+    pass
+def runSimulation():
+    while True:
+        item = askUser()
+        if item == 'quit':
+            print(item, ":", shopping_cart[item]+"Let's Shop!")
+            break
+        if item not in [shopping_cart()]:
+            item = input("Enter an item:")
+            amt = int(input("Enter the amount")) 
+            shopping_cart[item] = amt
+            print("Item added!")
+            
+        
+        if item in shopping_cart:
+            print("Item already in cart")
+            shopping_cart[item] += amt
+            
+        
+        else:
+            shopping_cart 
+            print("Cart after removal is : " + str(shopping_cart))
+            
+runSimulation()
+
+plums : 2
+kale : 1
+oranges : 4
+bananas : 6
+
+
+### 2) Create a Module in VS Code and Import It into jupyter notebook <br>
+<p><b>Module should have the following capabilities:</b><br><br>
+1) Has a function to calculate the square footage of a house <br>
+    <b>Reminder of Formula: Length X Width == Area<br>
+        <hr>
+2) Has a function to calculate the circumference of a circle <br><br>
+<b>Program in Jupyter Notebook should take in user input and use imported functions to calculate a circle's circumference or a houses square footage</b>
+</p>
+
+import areacir
+from areacir import Cir
+print(areacir.area())
+
+Cir()
+
+Enter the length45
+Enter the height56
+Square footage of home=2520
+None
+ Please Enter the radius of a circle: 26
+Circumference of a Circle = 163.28
+
+
+
+
+## Exercise 3 <br>
+<p>Write a function that takes in two lists and returns the two lists merged together and sorted<br>
+<b><i>Hint: You can use the .sort() method</i></b></p>
+
+l_1 = [1,2,3,4,5,6]
+l_2 = [3,4,5,6,7,8,10]
+
+l_1.extend(l_2)
+sorted(l_1)
+
+[1, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 10]
